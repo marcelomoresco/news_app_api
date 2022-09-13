@@ -7,8 +7,7 @@ import '../models/article_model.dart';
 class ApiNewsletter {
   final client = http.Client();
 
-  final api_url = Uri.parse(
-      'https://newsapi.org/v2/top-headlines?sources=google-news-br&apiKey=48c851ffeb594c48a314133eab017cb9');
+  final api_url = Uri.parse('SUACHAVEAPI');
 
   Future<List<Article>> getDataFromApi() async {
     http.Response response = await client.get(api_url);

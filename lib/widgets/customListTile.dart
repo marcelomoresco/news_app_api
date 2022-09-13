@@ -6,11 +6,7 @@ import '../models/article_model.dart';
 Widget customListTile(Article article, BuildContext context) {
   return InkWell(
     onTap: () async {
-      if (await canLaunchUrl(Uri.parse(article.url))) {
-        await launchUrl(Uri.parse(article.url));
-      } else {
-        throw ("Erro ao carregar dados!");
-      }
+      await launchUrl(Uri.parse(article.url));
     },
     child: Container(
       margin: EdgeInsets.all(12.0),
@@ -32,8 +28,6 @@ Widget customListTile(Article article, BuildContext context) {
             height: 200.0,
             width: double.infinity,
             decoration: BoxDecoration(
-              //let's add the height
-
               image: DecorationImage(
                   image: NetworkImage(article.urlToImage), fit: BoxFit.cover),
               borderRadius: BorderRadius.circular(12.0),
